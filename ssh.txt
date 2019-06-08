@@ -1,0 +1,61 @@
+wget https://raw.githubusercontent.com/hongwenjun/vps_setup/master/debian_wg_vpn.sh
+chmod +x debian_wg_vpn.sh && ./debian_wg_vpn.sh
+
+
+wget https://raw.githubusercontent.com/hongwenjun/WinKcp_Launcher/master/wg_udp2raw.sh
+chmod +x wg_udp2raw.sh  && ./wg_udp2raw.sh
+
+
+
+
+B7RRX-RVN4P-PCPBM-89D8Y-X4PQH — 00184-50100-21572-AAOEM
+N67Y4-R7KXM-CJKJB-BHGCW-CPKXV — 00184-50070-47113-AAOEM
+https://www.atrandys.com/2018/1018.html
+
+wg genpsk >bwshkey
+
+wg genkey | tee bwpkey | wg pubkey >>bwpkey
+wg-quick down wg0
+wg-quick up wg0
+   
+Debian一键安装wireguard 脚本 wget -qO- git.io/fptwc | bash
+Ubuntu一键安装wireguard 脚本 wget -qO- git.io/fpcnl | bash
+
+ 使用下面命令开启iptables转发8080端口
+
+iptables -A INPUT -p tcp -m tcp --dport 8080 -j ACCEPT
+ 
+iptables -t nat -A PREROUTING -p tcp -m tcp --dport 8080 -j DNAT --to-destination 10.0.0.2:8080
+然后保存iptables，这样VPS重启后iptables的规则也生效。
+
+service iptables save
+
+
+
+v2ray 233
+# CentOS：
+yum update -y && yum install curl -y
+
+# Debian/Ubuntu：
+apt-get update -y && apt-get install curl -y
+
+bash <(curl -s -L https://git.io/v2ray.sh)
+
+
+
+Ubuntu一键脚本安装WireGuard 16.4
+
+
+wget https://raw.githubusercontent.com/atrandys/wireguard/master/wireguard_install_ubuntu.sh && chmod +x wireguard_install_ubuntu.sh && ./wireguard_install_ubuntu.sh
+
+debian9  一键脚本安装WireGuard
+
+
+ apt-get update
+ apt-get dist-upgrade
+wget --no-check-certificate -qO- 'https://moeclub.org/attachment/LinuxShell/wireguard.sh'| bash
+
+
+CentOS7一键脚本安装WireGuard
+yum install -y wget && wget https://raw.githubusercontent.com/atrandys/wireguard/master/wireguard_install.sh && chmod +x wireguard_install.sh && ./wireguard_install.sh
+
